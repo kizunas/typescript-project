@@ -1,4 +1,4 @@
-
+// enumを使用
 enum Role{
   Admin,
   Read_only,
