@@ -1,7 +1,17 @@
+// エイリアス型
+// このtypeという記述はTypeScript
+// Combinableは型名
+// number | stringという書き方はUnion型の書き方
+type Combinable = number | string
+type ConversionDiscriptor = 'as-number' | 'as-text'
+
 function combine(
-  input1: number | string, // Union型
-  input2: number | string,
-  resultConversion: 'as-number' | 'as-text', // UnionとLiteralを合わせたもの(指定されたもの以外、許可されない)
+  // input1: number | string, // Union型
+  // input2: number | string,
+  input1: Combinable, // エイリアス型
+  input2: Combinable, // エイリアス型
+  // resultConversion: 'as-number' | 'as-text', // UnionとLiteralを合わせたもの(指定されたもの以外、許可されない)
+  resultConversion: ConversionDiscriptor, // エイリアス型
 ) {
   let result
   if ((typeof input1 === 'number' && typeof input2 === 'number') || resultConversion === 'as-number') {
