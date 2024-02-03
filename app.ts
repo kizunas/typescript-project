@@ -1,41 +1,35 @@
-// エイリアス型
-// このtypeという記述はTypeScript
-// Combinableは型名
-// number | stringという書き方はUnion型の書き方
-type Combinable = number | string
-type ConversionDiscriptor = 'as-number' | 'as-text'
-
-function combine(
-  // input1: number | string, // Union型
-  // input2: number | string,
-  input1: Combinable, // エイリアス型
-  input2: Combinable, // エイリアス型
-  // resultConversion: 'as-number' | 'as-text', // UnionとLiteralを合わせたもの(指定されたもの以外、許可されない)
-  resultConversion: ConversionDiscriptor, // エイリアス型
-) {
-  let result
-  if ((typeof input1 === 'number' && typeof input2 === 'number') || resultConversion === 'as-number') {
-    result = +input1 + +input2; // 単項プラス演算子は、数値以外も数値へと変換（数値にできないものはNaNになるので注意）
-  } else {
-    result = input1.toString() + input2.toString() // toStringで明示的に文字列を指定
-  }
-  return result;
-  // if (resultConversion === 'as-number') {
-  //   return +result // 単項プラス演算子は、数値以外も数値へと変換（数値にできないものはNaNになるので注意）
-  //   // return parseFloat(result) // こっちの書き方でも大丈夫parseFloatは浮動小数点値を返す
-  // } else {
-  //   return result.toString();
-  // }
+// 戻り値の型指定
+function add(n1: number, n2: number): number {
+  return n1 + n2;
 }
 
+printResult(add(5, 12)); // Result 17
 
-const combinedAges = combine(30, 26, 'as-number');  // 結果をnumberで返してほしいためas-numberと記述
-console.log(combinedAges);
-
-const combinedStringAges = combine('30', '26', 'as-number'); // 文字列で渡すが数字で返してほしいという条件
-console.log(combinedStringAges);
+// console.log(printResult(add(5, 12))); // undefined
 
 
-const combinedNames = combine('Max', 'Annna', 'as-text'); // 結果をstringsで返してほしいためas-textと記述
-console.log(combinedNames);
+// void 関数がreturn命令をもたない
+function printResult(num: number): void{
+  console.log('Result' + num);
+}
+
+// let combineValues: Function; // 関数という型を指定（しかし関数なら何でもはいってしまう）
+
+// let combineValues: () => number; // アロー関数で書く。左が引数（引数がないときは空でよい）、右が返り値
+
+let combineValues: (a: number, b: number) => number; // 引数の型がadd関数と一致していればよい。名前(a, b)は一致してなくてよい。
+
+combineValues = add; // 関数を格納している
+
+combineValues(8, 8)
+
+// callback関数の型指定
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result)
+}
+
+addAndHandle(10, 20, (result) =>  {
+  console.log(result);
+})
 
