@@ -1,35 +1,19 @@
-// 戻り値の型指定
-function add(n1: number, n2: number): number {
-  return n1 + n2;
+// unknown型には何を入れてもエラーにならない
+let userInput: unknown;
+
+let userName: string;
+
+// 他の型にunknown型を入れるとエラーになる。
+// userName = userInput // any型ならエラーにならない（TypeScriptがチェックしないため）がunknown型はエラーになる。
+
+// エラーにならないようにするにはデータ型をif文でチェックする
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-printResult(add(5, 12)); // Result 17
-
-// console.log(printResult(add(5, 12))); // undefined
-
-
-// void 関数がreturn命令をもたない
-function printResult(num: number): void{
-  console.log('Result' + num);
+// never型は関数の戻り値として利用することができる(void型と似ているので注意)。
+function generateError(message: string, code: number): never {
+  throw {message: message, errorCode: code}; // throw 文を使用すると任意のタイミングで例外(error)を発生させる。戻り値は絶対になし（never型が使える）。無限ループのときも返り値は絶対になし。
 }
 
-// let combineValues: Function; // 関数という型を指定（しかし関数なら何でもはいってしまう）
-
-// let combineValues: () => number; // アロー関数で書く。左が引数（引数がないときは空でよい）、右が返り値
-
-let combineValues: (a: number, b: number) => number; // 引数の型がadd関数と一致していればよい。名前(a, b)は一致してなくてよい。
-
-combineValues = add; // 関数を格納している
-
-combineValues(8, 8)
-
-// callback関数の型指定
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-  const result = n1 + n2;
-  cb(result)
-}
-
-addAndHandle(10, 20, (result) =>  {
-  console.log(result);
-})
-
+generateError('エラーが発生しました。', 500)
