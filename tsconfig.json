@@ -99,5 +99,11 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+  },
+  // excludeの指定。指定方法は配列。コンパイルしたくないファイルを指定する
+  // 例えば*.dev.tsと指定するとdev.tsと名の付くものをすべて除外できる。
+  // また、**/*.dev.tsと指定すると全てのフォルダにある*.dev.tsを除外できる。
+  // node_modules配下のものは除外すべきであるためtypescriptが自動的に除外指定してくれているが、excludeのオプションが有効の時、node_modulesの記述をしないといけない。注意
+  // ちなみにnode_modulesは、package.jsonのdependencyの箇所のライブラリを指す。
+  "exclude": ["basics.ts", "node_modules"],
 }
