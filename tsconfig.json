@@ -108,5 +108,7 @@
   "exclude": ["basics.ts", "node_modules"],
   // includeの指定。includeを使う際はこちらに記載しないものはすべてコンパイル対象外となるため注意。
   // includeとexcludeは同時に使用可能。includeに書かれた対象からexcludeに書かれた対象が除外されるようになる。
-  "include":["app.ts"]
+  // "include":["app.ts"]
+  // filesはファイル単位での指定になる。
+  // "files": ["app.ts"]
 }
