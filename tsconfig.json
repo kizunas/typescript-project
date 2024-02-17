@@ -106,4 +106,7 @@
   // node_modules配下のものは除外すべきであるためtypescriptが自動的に除外指定してくれているが、excludeのオプションが有効の時、node_modulesの記述をしないといけない。注意
   // ちなみにnode_modulesは、package.jsonのdependencyの箇所のライブラリを指す。
   "exclude": ["basics.ts", "node_modules"],
+  // includeの指定。includeを使う際はこちらに記載しないものはすべてコンパイル対象外となるため注意。
+  // includeとexcludeは同時に使用可能。includeに書かれた対象からexcludeに書かれた対象が除外されるようになる。
+  "include":["app.ts"]
 }
