@@ -60,6 +60,7 @@
     "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
     // removeCommentsは、tsファイルにあるコメントをコンパイルするときにjsファイルから取り除く
     "removeComments": true,                           /* Disable emitting comments. */
+    // noEmitはjsファイルを作成しなくなる。エラーチェックだけ行いたいときなどに使うかも
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
     // "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types. */
