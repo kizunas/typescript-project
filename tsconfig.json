@@ -54,7 +54,8 @@
     // 検証モードのsourceでtsファイルが見られるようになる。
     // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
+    // JavaScriptファイルの出力先をoutDirを用いて変更する
+    "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
     // "removeComments": true,                           /* Disable emitting comments. */
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
@@ -110,7 +111,7 @@
   // また、**/*.dev.tsと指定すると全てのフォルダにある*.dev.tsを除外できる。
   // node_modules配下のものは除外すべきであるためtypescriptが自動的に除外指定してくれているが、excludeのオプションが有効の時、node_modulesの記述をしないといけない。注意
   // ちなみにnode_modulesは、package.jsonのdependencyの箇所のライブラリを指す。
-  "exclude": ["basics.ts", "node_modules"],
+  "exclude": ["src/basics.ts", "node_modules"],
   // includeの指定。includeを使う際はこちらに記載しないものはすべてコンパイル対象外となるため注意。
   // includeとexcludeは同時に使用可能。includeに書かれた対象からexcludeに書かれた対象が除外されるようになる。
   // "include":["app.ts"]
