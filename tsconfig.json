@@ -89,7 +89,7 @@
 
     /* Type Checking */
     // 厳格な型チェックを有効にする
-    // strictを有効にするとstrict以下の型チェックをすべてtrueにしたのと同義
+    // strictを有効にするとstrict以下の型チェックを一部をtrueにしたのと同義
     "strict": true,                                      /* Enable all strict type-checking options. */
     // noImplicitAnyは、型がanyと推論されたときに出るエラー
     // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
@@ -106,10 +106,10 @@
     // "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
     // alwaysStrictはjsを出力するときにstrictモードで出力するというオプション。コンパイルされたjsファイルを見るとuse strictと表示される。
     // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
-    // "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
-    // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
+    "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
+    "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
     // "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
-    // "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
+    "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
     // noFallthroughCasesInSwitchはswitch文でcase文でbreakの記述をしないといけないというオプション
     // "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
     // "noUncheckedIndexedAccess": true,                 /* Add 'undefined' to a type when accessed using an index. */
