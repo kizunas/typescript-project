@@ -88,8 +88,12 @@
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 
     /* Type Checking */
+    // 厳格な型チェックを有効にする
+    // strictを有効にするとstrict以下の型チェックをすべてtrueにしたのと同義
     "strict": true,                                      /* Enable all strict type-checking options. */
+    // noImplicitAnyは、型がanyと推論されたときに出るエラー
     // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    // strictNullChecksは、nullかもしれないオブジェクトにアクセスする際にそれが確実にnullではないことをチェックするもの
     // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
     // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
     // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
