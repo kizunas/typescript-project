@@ -95,11 +95,16 @@
     // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
     // strictNullChecksは、nullかもしれないオブジェクトにアクセスする際にそれが確実にnullではないことをチェックするもの
     // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
+    // strictFunctionTypesは関数を厳格にチェックするための関数
     // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
+    // strictBindCallApplyは、'bind', 'call', and 'apply'というメソッド使う時に便利。間違った引数を渡さないように警告を出す。
     // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
+    // strictPropertyInitializationはクラスのプロパティの初期化に関するオプション
     // "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
+    // noImplicitThisはthisを使用するときに推論でany型である場合にエラーが表示される。
     // "noImplicitThis": true,                           /* Enable error reporting when 'this' is given the type 'any'. */
     // "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
+    // alwaysStrictはjsを出力するときにstrictモードで出力するというオプション。コンパイルされたjsファイルを見るとuse strictと表示される。
     // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
     // "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
     // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
